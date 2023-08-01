@@ -442,6 +442,25 @@ $(document).on("click", "#weapon-attachments", function(e) {
                 type: "error",
             })
         );
+    } if (itemData.name == "huntinglicence") { //BOII HUNTING
+        var gender = "Man";
+        if (itemData.info.gender == 1) {
+            gender = "Woman";
+        }
+        $(".item-info-title").html("<p>" + itemData.label + "</p>");
+        $(".item-info-description").html(
+            "<p><strong>CSN: </strong><span>" +
+            itemData.info.citizenid +
+            "</span></p><p><strong>First Name: </strong><span>" +
+            itemData.info.firstname +
+            "</span></p><p><strong>Last Name: </strong><span>" +
+            itemData.info.lastname +
+            "</span></p><p><strong>Birth Date: </strong><span>" +
+            itemData.info.birthdate +
+            "</span></p><p><strong>Gender: </strong><span>" +
+            gender +
+            "</span></p>"
+        );
     }
 });
 
@@ -503,6 +522,59 @@ function FormatItemInfo(itemData, dom) {
                 itemData.info.birthdate +
                 "</span></p>"
             );
+            // INSURANCE
+        } else if (itemData.name == "insurance") {
+            $(".item-info-title").html("<p>" + itemData.label + "</p>");
+            $(".item-info-description").html(
+                "<p><strong>Name: </strong><span>" +
+                itemData.info.name +
+                "<p><strong>CitizenID: </strong><span>" +
+                itemData.info.citizenid +
+                "</span></p><p><strong>Plate: </strong><span>" +
+                itemData.info.plate +
+                "</span></p><p><strong>Vehicle Model: </strong><span>" +
+                itemData.info.model +
+                "</span></p><p><strong>Date: </strong><span>" +
+                itemData.info.date +
+                "</span></p><p><strong>Expires: </strong><span>" +
+                itemData.info.expire +
+                "</span></p>"
+            );
+            // REBEL MONEYWASH
+        } else if (itemData.name == "wetbills") {
+            $(".item-info-title").html("<p>" + itemData.label + "</p>");
+            $(".item-info-description").html(
+                "<p><strong>Worth: </strong><span>$" +
+                itemData.info.worth +
+                "</span></p>"
+            );
+        } else if (itemData.name == "car_registration") {
+            $(".item-info-title").html("<p>" + itemData.label + "</p>");
+            $(".item-info-description").html(
+                "<p><strong>Name: </strong><span>" +
+                itemData.info.name +
+                "<p><strong>CitizenID: </strong><span>" +
+                itemData.info.citizenid +
+                "</span></p><p><strong>Plate: </strong><span>" +
+                itemData.info.plate +
+                "</span></p><p><strong>Vehicle Model: </strong><span>" +
+                itemData.info.model +
+                "</span></p>"
+            );
+            
+        } else if (itemData.name == "health_insurance") {
+            $(".item-info-title").html("<p>" + itemData.label + "</p>");
+            $(".item-info-description").html(
+                "<p><strong>Name: </strong><span>" +
+                itemData.info.name +
+                "<p><strong>CitizenID: </strong><span>" +
+                itemData.info.citizenid +
+                "</span></p><p><strong>Date: </strong><span>" +
+                itemData.info.date +
+                "</span></p><p><strong>Expires: </strong><span>" +
+                itemData.info.expire +
+                "</span></p>"
+            );
         } else if (itemData.name == "lawyerpass") {
             $(".item-info-title").html("<p>" + itemData.label + "</p>");
             $(".item-info-description").html(
@@ -521,6 +593,23 @@ function FormatItemInfo(itemData, dom) {
             $(".item-info-description").html(
                 "<p>" + itemData.info.uses + " uses left.</p>"
             );
+            // JIM MECHANIC
+        } else if (itemData.name == "mechboard") {
+            $(".item-info-title").html("<p>" + itemData.label + "</p>");
+            $(".item-info-description").html(
+                "<p>" + itemData.info.vehplate + "</p>" +
+                "<p>" + itemData.info.veh + "</p>"
+            );
+            // FLIGHT TEST
+        } else if (itemData.name == "flightlicense") {
+            $(".item-info-title").html("<p>" + itemData.label + "</p>");
+			$(".item-info-description").html(
+				"<p><strong>Name: </strong><span>" + itemData.info.name +
+				"<p><strong>CitizenID: </strong><span>" + itemData.info.citizenid +
+				"</span></p><p><strong>Date: </strong><span>" +itemData.info.date +
+				"</span></p><p><strong>Type: </strong><span>" +itemData.info.test +
+				"</span></p>"
+			);
         } else if (itemData.name == "syphoningkit") { // Syphoning Kit (CDN-Fuel or CDN-Syphoning!)
             $(".item-info-title").html("<p>" + itemData.label + "</p>");
             $(".item-info-description").html(
@@ -1343,7 +1432,7 @@ function swap($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
                 if (newData.info.quality !== fromData.info.quality  ) {
                     InventoryError($fromInv, $fromSlot);
                     $.post(
-                        "https://qb-inventory/Notify",
+                        "https://ps-inventory/Notify",
                         JSON.stringify({
                             message: "You can not stack items which are not the same quality.",
                             type: "error",
