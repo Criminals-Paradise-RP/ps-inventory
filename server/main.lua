@@ -1934,6 +1934,7 @@ RegisterNetEvent('inventory:server:SetInventoryData', function(fromInventory, to
             else
                 QBCore.Functions.Notify(src, "You don't have enough cash..", "error")
             end
+		else
 		-- elseif QBCore.Shared.SplitStr(shopType, "_")[1] == "Itemshop" then
         --     if Player.Functions.RemoveMoney("cash", price, "itemshop-bought-item") then
         --         if QBCore.Shared.SplitStr(itemData.name, "_")[1] == "weapon" then
