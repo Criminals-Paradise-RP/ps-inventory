@@ -687,7 +687,7 @@ RegisterCommand('closeinv', function()
     closeInventory()
 end, false)
 
-RegisterNetEvent("qb-inventory:client:closeinv", function()
+RegisterNetEvent("ps-inventory:client:closeinv", function()
     closeInventory()
 end)
 
@@ -831,7 +831,7 @@ for i = 1, 6 do
     RegisterKeyMapping('slot' .. i, 'Uses the item in slot ' .. i, 'keyboard', i)
 end
 
-RegisterNetEvent('qb-inventory:client:giveAnim', function()
+RegisterNetEvent('ps-inventory:client:giveAnim', function()
     LoadAnimDict('mp_common')
 	TaskPlayAnim(PlayerPedId(), 'mp_common', 'givetake1_b', 8.0, 1.0, -1, 16, 0, 0, 0, 0)
 end)
@@ -1072,28 +1072,28 @@ end)
         TriggerServerEvent("inventory:server:OpenInventory", "attachment_crafting", math.random(1, 99), crafting)
     end)
     
-    local toolBoxModels = {
-        `prop_toolchest_05`,
-        `prop_tool_bench02_ld`,
-        `prop_tool_bench02`,
-        `prop_toolchest_02`,
-        `prop_toolchest_03`,
-        `prop_toolchest_03_l2`,
-        `prop_toolchest_05`,
-        `prop_toolchest_04`,
-    }
-    exports['qb-target']:AddTargetModel(toolBoxModels, {
-            options = {
-                {
-                    event = "inventory:client:WeaponAttachmentCrafting",
-                    icon = "fas fa-wrench",
-                    label = "Weapon Attachment Crafting", 
-                },
-                {
-                    event = "inventory:client:Crafting",
-                    icon = "fas fa-wrench",
-                    label = "Item Crafting", 
-                },
-            },
-        distance = 1.0
-    })
+    -- local toolBoxModels = {
+    --     `prop_toolchest_05`,
+    --     `prop_tool_bench02_ld`,
+    --     `prop_tool_bench02`,
+    --     `prop_toolchest_02`,
+    --     `prop_toolchest_03`,
+    --     `prop_toolchest_03_l2`,
+    --     `prop_toolchest_05`,
+    --     `prop_toolchest_04`,
+    -- }
+    -- exports['qb-target']:AddTargetModel(toolBoxModels, {
+    --         options = {
+    --             {
+    --                 event = "inventory:client:WeaponAttachmentCrafting",
+    --                 icon = "fas fa-wrench",
+    --                 label = "Weapon Attachment Crafting", 
+    --             },
+    --             {
+    --                 event = "inventory:client:Crafting",
+    --                 icon = "fas fa-wrench",
+    --                 label = "Item Crafting", 
+    --             },
+    --         },
+    --     distance = 1.0
+    -- })
