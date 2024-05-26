@@ -221,122 +221,120 @@ Config.CraftingItems = {
 Config.AttachmentCraftingLocation = vector3(88.91, 3743.88, 40.77) -- Only needed if not using target
 
 Config.AttachmentCrafting = {
-    ["items"] = {
-        [1] = {
-            name = "pistol_extendedclip",
-            amount = 50,
-            info = {},
-            costs = {
-                ["metalscrap"] = 140,
-                ["steel"] = 250,
-                ["rubber"] = 60,
-            },
-            type = "item",
-            slot = 1,
-            threshold = 0,
-            points = 1,
+    [1] = {
+        name = "pistol_extendedclip",
+        amount = 50,
+        info = {},
+        costs = {
+            ["metalscrap"] = 140,
+            ["steel"] = 250,
+            ["rubber"] = 60,
         },
-        [2] = {
-            name = "pistol_suppressor",
-            amount = 50,
-            info = {},
-            costs = {
-                ["metalscrap"] = 165,
-                ["steel"] = 285,
-                ["rubber"] = 75,
-            },
-            type = "item",
-            slot = 2,
-            threshold = 10,
-            points = 2,
+        type = "item",
+        slot = 1,
+        threshold = 0,
+        points = 1,
+    },
+    [2] = {
+        name = "pistol_suppressor",
+        amount = 50,
+        info = {},
+        costs = {
+            ["metalscrap"] = 165,
+            ["steel"] = 285,
+            ["rubber"] = 75,
         },
-        [3] = {
-            name = "smg_extendedclip",
-            amount = 50,
-            info = {},
-            costs = {
-                ["metalscrap"] = 190,
-                ["steel"] = 305,
-                ["rubber"] = 85,
-            },
-            type = "item",
-            slot = 3,
-            threshold = 25,
-            points = 3,
+        type = "item",
+        slot = 2,
+        threshold = 10,
+        points = 2,
+    },
+    [3] = {
+        name = "smg_extendedclip",
+        amount = 50,
+        info = {},
+        costs = {
+            ["metalscrap"] = 190,
+            ["steel"] = 305,
+            ["rubber"] = 85,
         },
-        [4] = {
-            name = "microsmg_extendedclip",
-            amount = 50,
-            info = {},
-            costs = {
-                ["metalscrap"] = 205,
-                ["steel"] = 340,
-                ["rubber"] = 110,
-            },
-            type = "item",
-            slot = 4,
-            threshold = 50,
-            points = 4,
+        type = "item",
+        slot = 3,
+        threshold = 25,
+        points = 3,
+    },
+    [4] = {
+        name = "microsmg_extendedclip",
+        amount = 50,
+        info = {},
+        costs = {
+            ["metalscrap"] = 205,
+            ["steel"] = 340,
+            ["rubber"] = 110,
         },
-        [5] = {
-            name = "smg_drum",
-            amount = 50,
-            info = {},
-            costs = {
-                ["metalscrap"] = 230,
-                ["steel"] = 365,
-                ["rubber"] = 130,
-            },
-            type = "item",
-            slot = 5,
-            threshold = 75,
-            points = 5,
+        type = "item",
+        slot = 4,
+        threshold = 50,
+        points = 4,
+    },
+    [5] = {
+        name = "smg_drum",
+        amount = 50,
+        info = {},
+        costs = {
+            ["metalscrap"] = 230,
+            ["steel"] = 365,
+            ["rubber"] = 130,
         },
-        [6] = {
-            name = "smg_scope",
-            amount = 50,
-            info = {},
-            costs = {
-                ["metalscrap"] = 255,
-                ["steel"] = 390,
-                ["rubber"] = 145,
-            },
-            type = "item",
-            slot = 6,
-            threshold = 100,
-            points = 6,
+        type = "item",
+        slot = 5,
+        threshold = 75,
+        points = 5,
+    },
+    [6] = {
+        name = "smg_scope",
+        amount = 50,
+        info = {},
+        costs = {
+            ["metalscrap"] = 255,
+            ["steel"] = 390,
+            ["rubber"] = 145,
         },
-        [7] = {
-            name = "assaultrifle_extendedclip",
-            amount = 50,
-            info = {},
-            costs = {
-                ["metalscrap"] = 270,
-                ["steel"] = 435,
-                ["rubber"] = 155,
-                ["smg_extendedclip"] = 1,
-            },
-            type = "item",
-            slot = 7,
-            threshold = 150,
-            points = 7,
+        type = "item",
+        slot = 6,
+        threshold = 100,
+        points = 6,
+    },
+    [7] = {
+        name = "assaultrifle_extendedclip",
+        amount = 50,
+        info = {},
+        costs = {
+            ["metalscrap"] = 270,
+            ["steel"] = 435,
+            ["rubber"] = 155,
+            ["smg_extendedclip"] = 1,
         },
-        [8] = {
-            name = "assaultrifle_drum",
-            amount = 50,
-            info = {},
-            costs = {
-                ["metalscrap"] = 300,
-                ["steel"] = 469,
-                ["rubber"] = 170,
-                ["smg_extendedclip"] = 2,
-            },
-            type = "item",
-            slot = 8,
-            threshold = 200,
-            points = 8,
+        type = "item",
+        slot = 7,
+        threshold = 150,
+        points = 7,
+    },
+    [8] = {
+        name = "assaultrifle_drum",
+        amount = 50,
+        info = {},
+        costs = {
+            ["metalscrap"] = 300,
+            ["steel"] = 469,
+            ["rubber"] = 170,
+            ["smg_extendedclip"] = 2,
         },
-    }
+        type = "item",
+        slot = 8,
+        threshold = 200,
+        points = 8,
+    },
 }
 
 BackEngineVehicles = {
@@ -385,4 +383,87 @@ Config.MaximumAmmoValues = {
     ["smg"] = 250,
     ["shotgun"] = 200,
     ["rifle"] = 250,
+}
+
+Config.VehicleInventories = {
+    default = { -- This is the default inventory for all vehicles not specified in classes or vehicles below
+        weight = 60000,
+        slots = 35,
+    },
+    classes = { -- This is the inventory for each class of vehicle
+        [0] = {
+            maxWeight = 38000,
+            slots = 30,
+        },
+        [1] = {
+            maxWeight = 50000,
+            slots = 40,
+        },
+        [2] = {
+            maxWeight = 75000,
+            slots = 50,
+        },
+        [3] = {
+            maxWeight = 42000,
+            slots = 35,
+        },
+        [4] = {
+            maxWeight = 38000,
+            slots = 30,
+        },
+        [5] = {
+            maxWeight = 30000,
+            slots = 25,
+        },
+        [6] = {
+            maxWeight = 30000,
+            slots = 25,
+        },
+        [7] = {
+            maxWeight = 30000,
+            slots = 25,
+        },
+        [8] = {
+            maxWeight = 15000,
+            slots = 15,
+        },
+        [9] = {
+            maxWeight = 60000,
+            slots = 35,
+        },
+        [12] = {
+            maxWeight = 120000,
+            slots = 35,
+        },
+        [13] = {
+            maxWeight = 0,
+            slots = 0,
+        },
+        [14] = {
+            maxWeight = 120000,
+            slots = 50,
+        },
+        [15] = {
+            maxWeight = 120000,
+            slots = 50,
+        },
+        [16] = {
+            maxWeight = 120000,
+            slots = 50,
+        }
+    },
+    vehicles = { -- This is the inventory for each vehicle individually
+        ["rumpo"] = {
+            maxWeight = 80000,
+            slots = 40,
+        },
+        ["sultan"] = {
+            maxWeight = 30000,
+            slots = 15
+        },
+        ["baller"] = {
+            maxWeight = 50000,
+            slots = 25
+        }
+    }
 }
